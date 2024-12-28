@@ -20,7 +20,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_28_155200) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_posts_on_user_id"
+    t.index ["user_id"], name: "index_posts_on_user_id" using: :btrees
   end
 
   create_table "users", force: :cascade do |t|
