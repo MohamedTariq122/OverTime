@@ -20,7 +20,12 @@
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
-
+   
+  <%= form_for @product do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Drill hammer" %>
+    <% end %>
+    
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
