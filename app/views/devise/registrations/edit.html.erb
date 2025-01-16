@@ -1,7 +1,7 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= devise_error_messages! %>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -20,12 +20,7 @@
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
-   
-  <%= form_for @product do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, placeholder: "Drill hammer" %>
-    <% end %>
-    
+
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
@@ -34,6 +29,29 @@
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3>Edit Product</h3>
+
+<%= form_for @product do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Drill hammer" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.number_field :price %>
   </div>
 
   <div class="actions">
