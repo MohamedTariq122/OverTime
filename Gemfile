@@ -65,4 +65,4 @@ gem "spring"
 end
 
 gem 'devise', '~> 4.9', '>= 4.9.4'
-gem "tailwindcss-rails", "~> 3.0"
+gem "tailwindcss-rails", "~> 4.0"
